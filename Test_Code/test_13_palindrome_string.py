@@ -6,14 +6,19 @@ spec = importlib.util.spec_from_file_location("prog", CODE_DIR / "13_palindrome_
 prog = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(prog)
 
-assert prog.is_palindrome_string("") is True
-assert prog.is_palindrome_string("a") is True
-assert prog.is_palindrome_string("madam") is True
-assert prog.is_palindrome_string("Madam") is True
-assert prog.is_palindrome_string("racecar") is True
-assert prog.is_palindrome_string("hello") is False
-assert prog.is_palindrome_string("A man, a plan, a canal: Panama") is True
-assert prog.is_palindrome_string("Was it a car or a cat I saw?") is True
-assert prog.is_palindrome_string("Python") is False
+def test_13_palindrome_string():
+    assert prog.is_palindrome_string("") is True
+    assert prog.is_palindrome_string("a") is True
+    assert prog.is_palindrome_string("madam") is True
+    assert prog.is_palindrome_string("Madam") is True
+    assert prog.is_palindrome_string("racecar") is True
+    assert prog.is_palindrome_string("hello") is False
+    assert prog.is_palindrome_string("A man, a plan, a canal: Panama") is True
+    assert prog.is_palindrome_string("Was it a car or a cat I saw?") is True
+    assert prog.is_palindrome_string("Python") is False
 
-print("All test cases passed.")
+
+
+if __name__ == "__main__":
+    test_13_palindrome_string()
+    print("All test cases passed.")
