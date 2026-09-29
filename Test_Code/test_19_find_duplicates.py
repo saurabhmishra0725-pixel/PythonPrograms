@@ -6,12 +6,17 @@ spec = importlib.util.spec_from_file_location("prog", CODE_DIR / "19_find_duplic
 prog = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(prog)
 
-assert prog.find_duplicates([]) == []
-assert prog.find_duplicates([1, 2, 3]) == []
-assert prog.find_duplicates([1, 1]) == [1]
-assert prog.find_duplicates([1, 2, 3, 2, 4, 1]) == [1, 2]
-assert prog.find_duplicates([3, 3, 3]) == [3]
-assert prog.find_duplicates(["a", "b", "a", "c", "b"]) == ["a", "b"]
-assert prog.find_duplicates([1, 2, 3, 4, 5]) == []
+def test_19_find_duplicates():
+    assert prog.find_duplicates([]) == []
+    assert prog.find_duplicates([1, 2, 3]) == []
+    assert prog.find_duplicates([1, 1]) == [1]
+    assert prog.find_duplicates([1, 2, 3, 2, 4, 1]) == [1, 2]
+    assert prog.find_duplicates([3, 3, 3]) == [3]
+    assert prog.find_duplicates(["a", "b", "a", "c", "b"]) == ["a", "b"]
+    assert prog.find_duplicates([1, 2, 3, 4, 5]) == []
 
-print("All test cases passed.")
+
+
+if __name__ == "__main__":
+    test_19_find_duplicates()
+    print("All test cases passed.")
