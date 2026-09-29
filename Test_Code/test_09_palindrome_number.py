@@ -6,12 +6,17 @@ spec = importlib.util.spec_from_file_location("prog", CODE_DIR / "09_palindrome_
 prog = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(prog)
 
-assert prog.is_palindrome_number(121) is True
-assert prog.is_palindrome_number(1221) is True
-assert prog.is_palindrome_number(12321) is True
-assert prog.is_palindrome_number(0) is True
-assert prog.is_palindrome_number(10) is False
-assert prog.is_palindrome_number(123) is False
-assert prog.is_palindrome_number(-121) is False
+def test_09_palindrome_number():
+    assert prog.is_palindrome_number(121) is True
+    assert prog.is_palindrome_number(1221) is True
+    assert prog.is_palindrome_number(12321) is True
+    assert prog.is_palindrome_number(0) is True
+    assert prog.is_palindrome_number(10) is False
+    assert prog.is_palindrome_number(123) is False
+    assert prog.is_palindrome_number(-121) is False
 
-print("All test cases passed.")
+
+
+if __name__ == "__main__":
+    test_09_palindrome_number()
+    print("All test cases passed.")
